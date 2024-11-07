@@ -1,22 +1,23 @@
 import { sva } from '@/styled-system/css';
 import { Box } from '@/styled-system/jsx';
 
-interface ITestLayoutProps {
+interface ILayerMenuProps {
   children?: React.ReactNode;
 }
 
-const TestLayout = ({ children }: ITestLayoutProps) => {
-  const testLayoutStyle = TestLayoutSva();
+const LayerMenu = ({ children }: ILayerMenuProps) => {
+  const layerMenuStyle = LayerMenuSva();
   return (
-    <Box className={testLayoutStyle.wrapper}>
+    <Box className={layerMenuStyle.wrapper}>
       <Box>{children}</Box>
+      Layer Menu
     </Box>
   );
 };
 
-export default TestLayout;
+export default LayerMenu;
 
-const TestLayoutSva = sva({
+const LayerMenuSva = sva({
   slots: ['wrapper'],
   base: {
     wrapper: {
