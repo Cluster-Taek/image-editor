@@ -34,7 +34,7 @@ interface IStroke {
 
 interface IShape {
   type: ShapeType;
-  points: number[][];
+  points?: number[][];
 }
 
 interface IText {
