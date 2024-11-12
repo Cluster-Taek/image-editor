@@ -18,8 +18,8 @@ interface IMask {
   bottom: number;
   right: number;
   rotate: number;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
   disabled: boolean;
 }
 
@@ -38,7 +38,7 @@ interface IShape {
 }
 
 interface IText {
-  content: string;
+  content?: string;
   font?: string;
   fontSize?: number;
   fontWeight?: number;

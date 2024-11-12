@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import React from 'react';
 import { Layer as KonvaLayer } from 'react-konva';
 
 const ImageShape = dynamic(() => import('@/components/common/shape/image-shape'), { ssr: false });
@@ -21,4 +22,4 @@ const Layer = ({ layer }: ILayerProps) => {
   );
 };
 
-export default Layer;
+export default React.memo(Layer);

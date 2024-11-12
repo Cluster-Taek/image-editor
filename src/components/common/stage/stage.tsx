@@ -1,19 +1,22 @@
 'use client';
 
 import { useStageContext } from '@/contexts/stage-provider';
+import React from 'react';
 import { Stage as KonvaStage } from 'react-konva';
 
 interface IStageProps {
+  width?: number;
+  height?: number;
   children?: React.ReactNode;
 }
 
-const Stage = ({ children }: IStageProps) => {
+const Stage = ({ width, height, children }: IStageProps) => {
   const { stageRef, handleDeselect } = useStageContext();
   return (
     <KonvaStage
       ref={stageRef}
-      width={window.innerWidth - 400}
-      height={window.innerHeight}
+      width={width || window.innerWidth - 400}
+      height={height || window.innerHeight}
       onMouseDown={handleDeselect}
       onTouchStart={handleDeselect}
     >
@@ -22,4 +25,4 @@ const Stage = ({ children }: IStageProps) => {
   );
 };
 
-export default Stage;
+export default React.memo(Stage);
