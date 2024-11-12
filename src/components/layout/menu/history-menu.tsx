@@ -1,22 +1,23 @@
 import { sva } from '@/styled-system/css';
 import { Box } from '@/styled-system/jsx';
 
-interface ITestLayoutProps {
+interface IHistoryMenuProps {
   children?: React.ReactNode;
 }
 
-const TestLayout = ({ children }: ITestLayoutProps) => {
-  const testLayoutStyle = TestLayoutSva();
+const HistoryMenu = ({ children }: IHistoryMenuProps) => {
+  const historyMenuStyle = HistoryMenuSva();
   return (
-    <Box className={testLayoutStyle.wrapper}>
+    <Box className={historyMenuStyle.wrapper}>
       <Box>{children}</Box>
+      History Menu
     </Box>
   );
 };
 
-export default TestLayout;
+export default HistoryMenu;
 
-const TestLayoutSva = sva({
+const HistoryMenuSva = sva({
   slots: ['wrapper'],
   base: {
     wrapper: {
